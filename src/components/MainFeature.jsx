@@ -19,10 +19,337 @@ const MainFeature = () => {
     status: 'pending'
   })
 
+// Sample tasks data
+  const sampleTasks = [
+    {
+      id: '1',
+      title: 'Complete project proposal',
+      description: 'Finalize the quarterly project proposal and submit to stakeholders for review',
+      priority: 'high',
+      status: 'in-progress',
+      dueDate: '2024-12-20',
+      createdAt: '2024-12-15T10:00:00Z',
+      updatedAt: '2024-12-16T14:30:00Z'
+    },
+    {
+      id: '2',
+      title: 'Review team performance metrics',
+      description: 'Analyze Q4 performance data and prepare feedback for team members',
+      priority: 'medium',
+      status: 'pending',
+      dueDate: '2024-12-18',
+      createdAt: '2024-12-14T09:15:00Z',
+      updatedAt: '2024-12-14T09:15:00Z'
+    },
+    {
+      id: '3',
+      title: 'Update website content',
+      description: 'Refresh homepage content and update product descriptions',
+      priority: 'low',
+      status: 'completed',
+      dueDate: '2024-12-15',
+      createdAt: '2024-12-10T16:20:00Z',
+      updatedAt: '2024-12-15T11:45:00Z'
+    },
+    {
+      id: '4',
+      title: 'Schedule client meetings',
+      description: 'Coordinate with top 5 clients for next quarter planning sessions',
+      priority: 'high',
+      status: 'pending',
+      dueDate: '2024-12-17',
+      createdAt: '2024-12-12T08:30:00Z',
+      updatedAt: '2024-12-12T08:30:00Z'
+    },
+    {
+      id: '5',
+      title: 'Prepare budget report',
+      description: 'Compile annual budget analysis and variance report for management',
+      priority: 'high',
+      status: 'in-progress',
+      dueDate: '2024-12-22',
+      createdAt: '2024-12-13T13:10:00Z',
+      updatedAt: '2024-12-16T16:20:00Z'
+    },
+    {
+      id: '6',
+      title: 'Organize team building event',
+      description: 'Plan and book venue for end-of-year team celebration',
+      priority: 'medium',
+      status: 'pending',
+      dueDate: '2024-12-25',
+      createdAt: '2024-12-11T12:00:00Z',
+      updatedAt: '2024-12-11T12:00:00Z'
+    },
+    {
+      id: '7',
+      title: 'Update security protocols',
+      description: 'Review and implement new cybersecurity measures across all systems',
+      priority: 'high',
+      status: 'pending',
+      dueDate: '2024-12-19',
+      createdAt: '2024-12-14T15:45:00Z',
+      updatedAt: '2024-12-14T15:45:00Z'
+    },
+    {
+      id: '8',
+      title: 'Clean up email inbox',
+      description: 'Archive old emails and organize important correspondence',
+      priority: 'low',
+      status: 'completed',
+      dueDate: '2024-12-14',
+      createdAt: '2024-12-13T18:30:00Z',
+      updatedAt: '2024-12-14T10:15:00Z'
+    },
+    {
+      id: '9',
+      title: 'Conduct market research',
+      description: 'Research competitor pricing and market trends for new product launch',
+      priority: 'medium',
+      status: 'in-progress',
+      dueDate: '2024-12-21',
+      createdAt: '2024-12-12T14:20:00Z',
+      updatedAt: '2024-12-16T09:30:00Z'
+    },
+    {
+      id: '10',
+      title: 'Fix bug in mobile app',
+      description: 'Resolve critical login issue affecting iOS users',
+      priority: 'high',
+      status: 'completed',
+      dueDate: '2024-12-16',
+      createdAt: '2024-12-15T11:00:00Z',
+      updatedAt: '2024-12-16T13:45:00Z'
+    },
+    {
+      id: '11',
+      title: 'Write blog post about AI trends',
+      description: 'Create comprehensive article on emerging AI technologies in our industry',
+      priority: 'medium',
+      status: 'pending',
+      dueDate: '2024-12-23',
+      createdAt: '2024-12-14T16:30:00Z',
+      updatedAt: '2024-12-14T16:30:00Z'
+    },
+    {
+      id: '12',
+      title: 'Backup important files',
+      description: 'Create secure backup of all project files and databases',
+      priority: 'low',
+      status: 'completed',
+      dueDate: '2024-12-13',
+      createdAt: '2024-12-12T19:15:00Z',
+      updatedAt: '2024-12-13T08:20:00Z'
+    },
+    {
+      id: '13',
+      title: 'Interview new candidates',
+      description: 'Conduct final interviews for senior developer positions',
+      priority: 'high',
+      status: 'pending',
+      dueDate: '2024-12-20',
+      createdAt: '2024-12-13T10:45:00Z',
+      updatedAt: '2024-12-13T10:45:00Z'
+    },
+    {
+      id: '14',
+      title: 'Update documentation',
+      description: 'Revise API documentation and user guides for latest release',
+      priority: 'medium',
+      status: 'in-progress',
+      dueDate: '2024-12-24',
+      createdAt: '2024-12-11T14:10:00Z',
+      updatedAt: '2024-12-16T12:30:00Z'
+    },
+    {
+      id: '15',
+      title: 'Plan Christmas vacation',
+      description: 'Book flights and accommodation for holiday trip',
+      priority: 'low',
+      status: 'pending',
+      dueDate: '2024-12-18',
+      createdAt: '2024-12-10T20:00:00Z',
+      updatedAt: '2024-12-10T20:00:00Z'
+    },
+    {
+      id: '16',
+      title: 'Review contract proposals',
+      description: 'Analyze and provide feedback on three vendor contract proposals',
+      priority: 'medium',
+      status: 'completed',
+      dueDate: '2024-12-15',
+      createdAt: '2024-12-13T11:30:00Z',
+      updatedAt: '2024-12-15T17:20:00Z'
+    },
+    {
+      id: '17',
+      title: 'Optimize database performance',
+      description: 'Identify and resolve slow queries affecting application performance',
+      priority: 'high',
+      status: 'in-progress',
+      dueDate: '2024-12-19',
+      createdAt: '2024-12-14T09:00:00Z',
+      updatedAt: '2024-12-16T15:45:00Z'
+    },
+    {
+      id: '18',
+      title: 'Create training materials',
+      description: 'Develop onboarding resources for new team members',
+      priority: 'medium',
+      status: 'pending',
+      dueDate: '2024-12-26',
+      createdAt: '2024-12-12T13:20:00Z',
+      updatedAt: '2024-12-12T13:20:00Z'
+    },
+    {
+      id: '19',
+      title: 'Submit expense reports',
+      description: 'Compile and submit Q4 business expense documentation',
+      priority: 'low',
+      status: 'completed',
+      dueDate: '2024-12-12',
+      createdAt: '2024-12-11T16:40:00Z',
+      updatedAt: '2024-12-12T14:10:00Z'
+    },
+    {
+      id: '20',
+      title: 'Design new product mockups',
+      description: 'Create visual concepts for upcoming product launch',
+      priority: 'medium',
+      status: 'in-progress',
+      dueDate: '2024-12-21',
+      createdAt: '2024-12-13T12:15:00Z',
+      updatedAt: '2024-12-16T10:30:00Z'
+    },
+    {
+      id: '21',
+      title: 'Audit inventory systems',
+      description: 'Verify accuracy of warehouse inventory tracking',
+      priority: 'high',
+      status: 'pending',
+      dueDate: '2024-12-17',
+      createdAt: '2024-12-14T08:45:00Z',
+      updatedAt: '2024-12-14T08:45:00Z'
+    },
+    {
+      id: '22',
+      title: 'Respond to customer feedback',
+      description: 'Address recent customer service inquiries and complaints',
+      priority: 'medium',
+      status: 'completed',
+      dueDate: '2024-12-16',
+      createdAt: '2024-12-15T14:20:00Z',
+      updatedAt: '2024-12-16T11:30:00Z'
+    },
+    {
+      id: '23',
+      title: 'Test new software features',
+      description: 'Perform quality assurance testing on latest development build',
+      priority: 'high',
+      status: 'in-progress',
+      dueDate: '2024-12-18',
+      createdAt: '2024-12-15T13:00:00Z',
+      updatedAt: '2024-12-16T16:45:00Z'
+    },
+    {
+      id: '24',
+      title: 'Update social media profiles',
+      description: 'Refresh company social media presence and post new content',
+      priority: 'low',
+      status: 'pending',
+      dueDate: '2024-12-22',
+      createdAt: '2024-12-13T17:30:00Z',
+      updatedAt: '2024-12-13T17:30:00Z'
+    },
+    {
+      id: '25',
+      title: 'Analyze sales data',
+      description: 'Generate comprehensive sales performance report for stakeholders',
+      priority: 'medium',
+      status: 'pending',
+      dueDate: '2024-12-20',
+      createdAt: '2024-12-14T10:15:00Z',
+      updatedAt: '2024-12-14T10:15:00Z'
+    },
+    {
+      id: '26',
+      title: 'Renew software licenses',
+      description: 'Process renewals for expiring software subscriptions',
+      priority: 'high',
+      status: 'completed',
+      dueDate: '2024-12-14',
+      createdAt: '2024-12-12T15:50:00Z',
+      updatedAt: '2024-12-14T09:25:00Z'
+    },
+    {
+      id: '27',
+      title: 'Schedule equipment maintenance',
+      description: 'Arrange quarterly maintenance for office equipment and servers',
+      priority: 'medium',
+      status: 'pending',
+      dueDate: '2024-12-27',
+      createdAt: '2024-12-11T11:20:00Z',
+      updatedAt: '2024-12-11T11:20:00Z'
+    },
+    {
+      id: '28',
+      title: 'Review privacy policies',
+      description: 'Update privacy policies to comply with latest regulations',
+      priority: 'high',
+      status: 'in-progress',
+      dueDate: '2024-12-19',
+      createdAt: '2024-12-13T16:10:00Z',
+      updatedAt: '2024-12-16T14:15:00Z'
+    },
+    {
+      id: '29',
+      title: 'Organize office supplies',
+      description: 'Inventory and reorder necessary office supplies for next quarter',
+      priority: 'low',
+      status: 'completed',
+      dueDate: '2024-12-13',
+      createdAt: '2024-12-12T12:30:00Z',
+      updatedAt: '2024-12-13T15:40:00Z'
+    },
+    {
+      id: '30',
+      title: 'Plan Q1 product roadmap',
+      description: 'Define priorities and timeline for first quarter product development',
+      priority: 'high',
+      status: 'pending',
+      dueDate: '2024-12-23',
+      createdAt: '2024-12-14T11:45:00Z',
+      updatedAt: '2024-12-14T11:45:00Z'
+    },
+    {
+      id: '31',
+      title: 'Conduct user experience research',
+      description: 'Survey customers and analyze user behavior patterns',
+      priority: 'medium',
+      status: 'in-progress',
+      dueDate: '2024-12-25',
+      createdAt: '2024-12-12T18:20:00Z',
+      updatedAt: '2024-12-16T13:10:00Z'
+    },
+    {
+      id: '32',
+      title: 'Prepare year-end presentation',
+      description: 'Create comprehensive presentation summarizing annual achievements',
+      priority: 'high',
+      status: 'pending',
+      dueDate: '2024-12-28',
+      createdAt: '2024-12-15T12:40:00Z',
+      updatedAt: '2024-12-15T12:40:00Z'
+    }
+  ]
+
   useEffect(() => {
     const savedTasks = localStorage.getItem('taskflow-tasks')
     if (savedTasks) {
       setTasks(JSON.parse(savedTasks))
+    } else {
+      // Load sample data if no saved tasks exist
+      setTasks(sampleTasks)
     }
   }, [])
 
