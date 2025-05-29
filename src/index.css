@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'react-toastify/dist/ReactToastify.css';
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .task-card {
+    @apply bg-white dark:bg-surface-800 rounded-2xl p-4 md:p-6 shadow-task-card border border-surface-100 dark:border-surface-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .priority-indicator {
+    @apply w-1 h-full absolute left-0 top-0 rounded-l-2xl;
+  }
+  
+  .priority-high {
+    @apply bg-red-500 shadow-priority-high;
+  }
+  
+  .priority-medium {
+    @apply bg-amber-500 shadow-priority-medium;
+  }
+  
+  .priority-low {
+    @apply bg-green-500 shadow-priority-low;
+  }
+  
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-medium transition-all duration-200;
+  }
+  
+  .status-pending {
+    @apply bg-surface-100 text-surface-600 dark:bg-surface-700 dark:text-surface-300;
+  }
+  
+  .status-in-progress {
+    @apply bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300;
+  }
+  
+  .status-completed {
+    @apply bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300;
+  }
+  
+  .glassmorphism {
+    @apply bg-white/80 dark:bg-surface-800/80 backdrop-blur-xl border border-white/20 dark:border-surface-700/50;
+  }
+  
+  .neu-button {
+    @apply bg-surface-100 dark:bg-surface-800 shadow-neu-light dark:shadow-neu-dark border-0 hover:shadow-lg transition-all duration-300 active:shadow-inner;
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-surface-200 dark:border-surface-600 bg-white dark:bg-surface-800 text-surface-900 dark:text-surface-100 placeholder-surface-400 dark:placeholder-surface-500 focus:border-primary focus:ring-4 focus:ring-primary/20 transition-all duration-200;
+  }
+  
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: theme(colors.surface.300) transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-surface-300 dark:bg-surface-600 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-400 dark:bg-surface-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+/* Dark mode improvements */
+.dark .task-card {
+  @apply bg-surface-800/90 border-surface-700/50;
+}
+
+.dark .glassmorphism {
+  @apply bg-surface-800/60;
+}
+
+/* Custom focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-primary;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
