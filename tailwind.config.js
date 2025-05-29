@@ -30,6 +30,12 @@ export default {
           800: '#1e293b',
           900: '#0f172a'
         }
+background: '#ffffff',
+        foreground: '#0f172a',
+        border: '#e2e8f0',
+        'background-dark': '#0f172a',
+        'foreground-dark': '#f8fafc',
+        'border-dark': '#334155'
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
